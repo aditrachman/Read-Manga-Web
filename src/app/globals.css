@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: white) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* File: globals.css atau file CSS modul */
+.slider-container {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slick-slide {
+  padding: 0 10px; /* Jarak antara slide */
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: white; /* Warna tombol navigasi */
+}
+
+.slick-dots li button:before {
+  color: white; /* Warna dots indicator */
+}
