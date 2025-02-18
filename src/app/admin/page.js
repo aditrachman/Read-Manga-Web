@@ -268,7 +268,12 @@ export default function AdminPage() {
                   </h3>
                   <p>Rating: {manga.rating}</p>
                   <p>Genre: {manga.genre.join(", ")}</p>
-                  <p>Chapters: {manga.chapters.join(", ")}</p>
+                  <p>
+                    Chapters:{" "}
+                    {Array.isArray(manga.chapters)
+                      ? manga.chapters.join(", ")
+                      : manga.chapters}
+                  </p>
                   <div className="flex gap-2 mt-4">
                     <button
                       onClick={() => handleEditManga(manga)}
