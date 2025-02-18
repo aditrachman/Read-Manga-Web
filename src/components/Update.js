@@ -80,13 +80,13 @@ export default function Update() {
                   {manga.title}
                 </h3>
                 <div className="text-xs text-blue-400">
-                  {Array.isArray(manga.chapters) ? (
+                  {typeof manga.chapters === "number" ? (
                     <a href="#" className="hover:underline block">
-                      Ch. {manga.chapters[manga.chapters.length - 1]}
+                      Ch. {manga.chapters}
                     </a>
                   ) : (
                     <a href="#" className="hover:underline block">
-                      Ch. {manga.chapter || "N/A"}
+                      Ch. N/A
                     </a>
                   )}
                 </div>

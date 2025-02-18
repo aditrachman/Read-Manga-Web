@@ -293,7 +293,7 @@ export default function Home() {
                     <div className="p-6 py-4">
                       {/* Your content */}
                       <h2 className="text-white text-2xl font-bold">
-                        ✨ Terpopuler Hari Ini
+                        Terpopuler Hari Ini
                       </h2>
                       <Trending />
                     </div>

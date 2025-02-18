@@ -32,13 +32,8 @@ export default function Login() {
   return (
     <>
       {/* Tambahkan min-h-screen untuk memastikan konten memenuhi seluruh layar */}
-      <div className="flex min-h-screen flex-col justify-center py-12 sm:px-6 lg:px-8 bg-gray-900">
+      <div className="flex min-h-screen flex-col justify-center py-6 sm:px-6 lg:px-8 bg-gray-900">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
-          <img
-            alt="Your Company"
-            src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-            className="mx-auto h-10 w-auto"
-          />
           <h2 className="mt-6 text-center text-2xl/9 font-bold tracking-tight text-white">
             Sign in to your account
           </h2>
@@ -221,12 +216,12 @@ export default function Login() {
           </div>
 
           <p className="mt-10 text-center text-sm/6 text-gray-400">
-            Not a member?{" "}
+            anda bukan admin ?{" "}
             <a
               href="#"
               className="font-semibold text-indigo-400 hover:text-indigo-300"
             >
-              Start a 14 day free trial
+              hubungi master admin (adit)
             </a>
           </p>
         </div>
