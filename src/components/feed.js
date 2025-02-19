@@ -1,111 +1,131 @@
-import {
-  CheckIcon,
-  HandThumbUpIcon,
-  UserIcon,
-} from "@heroicons/react/20/solid";
-
-const timeline = [
-  {
-    id: 1,
-    content: "Applied to",
-    target: "Front End Developer",
-    href: "#",
-    date: "Sep 20",
-    datetime: "2020-09-20",
-    icon: UserIcon,
-    iconBackground: "bg-gray-400",
-  },
-  {
-    id: 2,
-    content: "Advanced to phone screening by",
-    target: "Bethany Blake",
-    href: "#",
-    date: "Sep 22",
-    datetime: "2020-09-22",
-    icon: HandThumbUpIcon,
-    iconBackground: "bg-blue-500",
-  },
-  {
-    id: 3,
-    content: "Completed phone screening with",
-    target: "Martha Gardner",
-    href: "#",
-    date: "Sep 28",
-    datetime: "2020-09-28",
-    icon: CheckIcon,
-    iconBackground: "bg-green-500",
-  },
-  {
-    id: 4,
-    content: "Advanced to interview by",
-    target: "Bethany Blake",
-    href: "#",
-    date: "Sep 30",
-    datetime: "2020-09-30",
-    icon: HandThumbUpIcon,
-    iconBackground: "bg-blue-500",
-  },
-  {
-    id: 5,
-    content: "Completed interview with",
-    target: "Katherine Snyder",
-    href: "#",
-    date: "Oct 4",
-    datetime: "2020-10-04",
-    icon: CheckIcon,
-    iconBackground: "bg-green-500",
-  },
-];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+"use client";
+import { PhotoIcon } from "@heroicons/react/24/solid";
 
 export default function Feed() {
   return (
-    <div className="flow-root">
-      <ul role="list" className="-mb-8">
-        {timeline.map((event, eventIdx) => (
-          <li key={event.id}>
-            <div className="relative pb-8">
-              {eventIdx !== timeline.length - 1 ? (
-                <span
-                  aria-hidden="true"
-                  className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
+    <form>
+      <div className="space-y-12  p-2 rounded-lg shadow-lg">
+        {/* Form Input Manga */}
+        <div className="border-b border-gray-700 pb-12">
+          <h2 className="text-base font-semibold text-white">Input Manga</h2>
+          <p className="mt-1 text-sm text-gray-400">
+            Masukkan detail manga yang ingin Anda rekomendasikan.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            {/* Nama Manga */}
+            <div className="sm:col-span-full">
+              <label
+                htmlFor="manga-name"
+                className="block text-sm font-medium text-white"
+              >
+                Nama Manga
+              </label>
+              <div className="mt-2">
+                <textarea
+                  id="reason"
+                  name="reason"
+                  rows={2}
+                  placeholder="Contoh: solo leveling"
+                  className="block w-full rounded-md bg-gray-800 px-3 py-1.5 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm"
                 />
-              ) : null}
-              <div className="relative flex space-x-3">
-                <div>
-                  <span
-                    className={classNames(
-                      event.iconBackground,
-                      "flex size-8 items-center justify-center rounded-full"
-                    )}
-                  >
-                    <event.icon
-                      aria-hidden="true"
-                      className="size-5 text-white"
-                    />
-                  </span>
-                </div>
-                <div className="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-                  <div>
-                    <p className="text-sm text-white">
-                      {event.content}{" "}
-                      <a href={event.href} className="font-medium text-white">
-                        {event.target}
-                      </a>
-                    </p>
+              </div>
+            </div>
+
+            {/* Alasan */}
+            <div className="col-span-full">
+              <label
+                htmlFor="reason"
+                className="block text-sm font-medium text-white"
+              >
+                Alasan
+              </label>
+              <div className="mt-2">
+                <textarea
+                  id="reason"
+                  name="reason"
+                  rows={3}
+                  placeholder="Contoh: Ceritanya seru dan karakter-karakternya menarik."
+                  className="block w-full rounded-md bg-gray-800 px-3 py-1.5 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm"
+                />
+              </div>
+              <p className="mt-3 text-sm text-gray-400">
+                Jelaskan alasan Anda merekomendasikan manga ini.
+              </p>
+            </div>
+
+            {/* Upload Gambar */}
+            <div className="col-span-full">
+              <label
+                htmlFor="cover-photo"
+                className="block text-sm font-medium text-white"
+              >
+                Cover Manga
+              </label>
+              <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-700 px-6 py-10">
+                <div className="text-center">
+                  <PhotoIcon
+                    aria-hidden="true"
+                    className="mx-auto h-12 w-12 text-gray-500"
+                  />
+                  <div className="mt-4 flex text-sm text-gray-400">
+                    <label
+                      htmlFor="file-upload"
+                      className="relative cursor-pointer rounded-md bg-gray-800 font-medium text-indigo-600 hover:text-indigo-500"
+                    >
+                      <span>Upload gambar</span>
+                      <input
+                        id="file-upload"
+                        name="file-upload"
+                        type="file"
+                        className="sr-only"
+                      />
+                    </label>
+                    <p className="pl-1">atau drag and drop</p>
                   </div>
-                  <div className="text-right text-sm whitespace-nowrap text-white">
-                    <time dateTime={event.datetime}>{event.date}</time>
-                  </div>
+                  <p className="text-xs text-gray-400">
+                    PNG, JPG, GIF maksimal 10MB
+                  </p>
                 </div>
               </div>
             </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+
+            {/* Centang R18 */}
+            <div className="col-span-full">
+              <div className="flex items-center gap-x-3">
+                <input
+                  id="r18"
+                  name="r18"
+                  type="checkbox"
+                  className="h-4 w-4 rounded border-gray-700 bg-gray-800 text-indigo-600 focus:ring-indigo-500"
+                />
+                <label
+                  htmlFor="r18"
+                  className="block text-sm font-medium text-white"
+                >
+                  Apakah manga ini R18?
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Tombol Kirim */}
+        <div className="mt-6 flex items-center justify-end gap-x-6">
+          <button
+            type="button"
+            className="text-sm font-semibold text-gray-400 hover:text-gray-300"
+          >
+            Batal
+          </button>
+          <button
+            type="submit"
+            className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Kirim
+          </button>
+        </div>
+      </div>
+    </form>
   );
 }

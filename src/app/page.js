@@ -21,6 +21,8 @@ import Updates from "@/components/Update";
 import Feed from "@/components/feed";
 import Genre from "@/components/genre";
 import Image from "next/image";
+import Footer from "@/components/footer";
+import Unknown from "@/components/unknown";
 const user = {
   name: "Tom Cook",
   email: "tom@example.com",
@@ -278,6 +280,9 @@ export default function Home() {
                         <Updates />
                       </div>
                       <Genre />
+                      <div className="py-4">
+                        <Unknown />
+                      </div>
                     </div>
                   </div>
                 </section>
@@ -299,10 +304,10 @@ export default function Home() {
                     </div>
                   </div>
                 </section>
-                <div className="overflow-hidden rounded-lg bg-gray-800 shadow-sm">
+                <div className="overflow-hidden rounded-lg bg-gray-900 shadow-sm">
                   <div className="p-6 py-6">
                     {/* Your content */}
-                    <h2 className="text-white text-2xl font-bold"></h2>
+                    <h2 className="text-white text-2xl font-bold "></h2>
                     <Feed />
                   </div>
                 </div>
@@ -311,14 +316,7 @@ export default function Home() {
           </div>
         </main>
         <footer>
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            <div className="border-t border-gray-200 py-8 text-center text-sm text-gray-500 sm:text-left">
-              <span className="block sm:inline">
-                &copy; 2021 Your Company, Inc.
-              </span>{" "}
-              <span className="block sm:inline">All rights reserved.</span>
-            </div>
-          </div>
+          <Footer />
         </footer>
       </div>
     </>
